@@ -132,7 +132,7 @@ public class ConsortiumChaincodeManager {
      * @throws NoSuchMethodException
      */
     private ConsortiumOrg getConsortiumOrg() throws IOException, NoSuchMethodException {
-        File storeFile = new File(System.getProperty("java.io.tmpdir")+"/HFCSampletest.properties");
+        File storeFile = new File("/root/fabric-samples/first-network/firstnetwork.properties");
         ConsortiumStore consortiumStore = new ConsortiumStore(storeFile);
         ConsortiumOrg org = new ConsortiumOrg(peers,orderers,consortiumStore,consortiumConfig.getCryptoConfigPath());
         logger.debug("Get FabricOrg");
