@@ -33,6 +33,7 @@
  */
 package com.hyperledger.fabric.components;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,7 +48,7 @@ public class Orderers {
     /**
      * the orderer cluster members {@code orderers}
      */
-    private List<Orderer> orderers;
+    private List<Orderer> orderers = new ArrayList<Orderer>();
 
     public String getOrdererDomainName() {
         return ordererDomainName;
@@ -98,7 +99,6 @@ public class Orderers {
         private String ordererLocation;
 
         public Orderer(String ordererName, String ordererLocation){
-            super();
             this.ordererName = ordererName;
             this.ordererLocation = ordererLocation;
         }

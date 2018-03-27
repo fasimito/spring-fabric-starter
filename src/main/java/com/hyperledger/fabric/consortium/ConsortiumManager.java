@@ -40,7 +40,7 @@ public class ConsortiumManager {
     private Orderers getOrderers() {
         Orderers orderer = new Orderers();
         orderer.setOrdererDomainName("example.com");
-        orderer.addOrderer("orderer.example.com", "grpc://127.0.0.1:7050");
+        orderer.addOrderer("orderer.example.com", "grpc://localhost:7050");
         return orderer;
     }
     private Peers getPeers() {
@@ -48,7 +48,7 @@ public class ConsortiumManager {
         peers.setOrgName("Org1");
         peers.setOrgMSPID("Org1MSP");
         peers.setOrgDomainName("org1.example.com");
-        peers.addPeer("peer0.org1.example.com", "peer0.org1.example.com", "grpc://127.0.0.1:7051", "grpc://127.0.0.1:7053", "http://127.0.0.1:7054");
+        peers.addPeer("peer0.org1.example.com", "peer0.org1.example.com", "grpc://localhost:7051", "grpc://127.0.0.1:7053", "http://127.0.0.1:7054");
         return peers;
     }
     private Chaincode getChaincode(String channelName, String chaincodeName, String chaincodePath, String chaincodeVersion) {

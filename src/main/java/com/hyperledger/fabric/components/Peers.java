@@ -55,7 +55,7 @@ public class Peers {
     /**
      * all the peers {@code peers} in current {@code orgName}
      */
-    private List<Peer> peers;
+    private List<Peer> peers = new ArrayList<Peer>();
 
     public Peers(){
         peers = new ArrayList<Peer>();
