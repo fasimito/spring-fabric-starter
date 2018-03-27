@@ -68,10 +68,11 @@ public class ConsortiumOrg {
         }
         setDomainName(peers.getOrgDomainName());
         setAdmin(consortiumStore.getMember("admin",peers.getOrgName()));
-        File skFile = Paths.get(cryptoConfigPath,"/peerOrganizations/",peers.getOrgDomainName(),
-                String.format("/users/Admin@%s/msp/keystore",peers.getOrgDomainName())).toFile();
-        File certificateFile = Paths.get(cryptoConfigPath,"/peerOrganizations/",peers.getOrgDomainName(),
-                String.format("/users/Admin@%s/msp/signcerts/Admin@%s-cert.pem", peers.getOrgDomainName(), peers.getOrgDomainName())).toFile();
+        ///root/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore
+        // 0d8185f2493958e63be68a723cf1a74278dac17003ef9cf4772fc21e5cf53594_sk
+        File skFile = Paths.get(cryptoConfigPath,"peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore").toFile();
+        ///root/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts
+        File certificateFile = Paths.get(cryptoConfigPath,"peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts").toFile();
         setPeerAdmin(consortiumStore.getMember(peers.getOrgName() + "Admin", peers.getOrgName(), peers.getOrgMSPID(), findFileSk(skFile), certificateFile));
     }
 
